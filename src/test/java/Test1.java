@@ -7,14 +7,14 @@ class TestPostman {
     void shouldReturn() {
         given()
                 .baseUri("https://postman-echo.com")
-                .body("data") // отправляемые данные (заголовки и query можно выставлять аналогично)
+                .body("some value") // отправляемые данные (заголовки и query можно выставлять аналогично)
 // Выполняемые действия
                 .when()
                 .post("/post")
 // Проверки
                 .then()
                 .statusCode(200)
-                .body("[0].currency", equalTo(null))
+                .body("data", equalTo("some value"))
         ;
 
 
